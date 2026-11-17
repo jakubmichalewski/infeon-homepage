@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@plugin '@tailwindcss/forms';
+
+@variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --font-sans: var(--font-rubik);
+
+  --color-brand-50: #f8f5ff;
+  --color-brand-100: #eee7ff;
+  --color-brand-200: #dfd3ff;
+  --color-brand-300: #c7b2ff;
+  --color-brand-400: #a486ff;
+  --color-brand-500: #8058f2;
+  --color-brand-600: #5c35dc;
+  --color-brand-700: #4826b8;
+  --color-brand-800: #39238b;
+  --color-brand-900: #2e2056;
+  --color-brand-950: #1c1235;
+  --color-accent-300: #dafa74;
+
+  --color-light-bg: var(--color-white);
+  --color-light-border: var(--color-zinc-200);
+  --color-light-sidebar: var(--color-zinc-50);
+  --color-light-heading: var(--color-zinc-800);
+  --color-light-paragraph: var(--color-zinc-600);
+
+  --color-dark-bg: var(--color-zinc-800);
+  --color-dark-border: var(--color-zinc-700);
+  --color-dark-sidebar: var(--color-zinc-900);
+  --color-dark-heading: var(--color-zinc-100);
+  --color-dark-paragraph: var(--color-zinc-300);
+
+  --color-chart-one: var(--color-sky-300);
+  --color-chart-two: var(--color-sky-400);
+  --color-chart-three: var(--color-sky-500);
+
+  --spacing-toolbar-height: calc(var(--spacing) * 12);
+}
+
+:root {
+  --font-rubik: 'Rubik', sans-serif;
+}
+
+body {
+  @apply text-light-paragraph dark:text-dark-paragraph min-h-dvh antialiased transition-colors;
+}
+
+@layer base {
+  input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+}
